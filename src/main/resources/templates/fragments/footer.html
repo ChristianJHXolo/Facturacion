@@ -1,0 +1,22 @@
+<hr>
+
+<div th:fragment="pie-pagina" class="container">
+    <p th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+		&middot; Administrador: <span th:text="${#authentication.principal.username}"></span>
+        | &copy; 2023 CashCraft, Inc. | WebApp Desarrollada con Spring Boot 3.0.0 | &middot; <a href="#">Privacy</a>
+        &middot; <a href="#">Terms</a>
+        
+    </p>
+    <p th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}">
+		&middot; Usuario Registrado: <span th:text="${#authentication.principal.username}"></span>
+        | &copy; 2023 CashCraft, Inc. | WebApp Desarrollada con Spring Boot 3.0.0 | &middot; <a href="#">Privacy</a>
+        &middot; <a href="#">Terms</a>
+        
+    </p>
+    <p th:unless="${#authorization.expression('isAuthenticated()')}">
+		&middot; Usuario Anónimo
+        | &copy; 2023 CashCraft, Inc. | WebApp Desarrollada con Spring Boot 3.0.0 | &middot; <a href="#">Privacy</a>
+        &middot; <a href="#">Terms</a>
+        
+    </p>
+</div>

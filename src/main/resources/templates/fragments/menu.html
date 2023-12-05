@@ -1,0 +1,29 @@
+<nav th:fragment="menu-principal" class="navbar navbar-expand-md fixed-top" style="background-color: rgb(40, 40, 40)">
+	<a class="navbar-brand" th:href="@{/}" style="color: rgb(247, 222, 118);">
+		<span style="color: rgb(50, 53, 98);">$ </span>CashCraft
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+		aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link active" style="color: rgb(150, 198, 194);" th:href="@{/}">Inicio</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active " style="color: rgb(150, 198, 194);" th:href="@{/clientes}">Clientes</a>
+			</li>
+			<li class="nav-item" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+				<a class="nav-link active text-secondary" th:href="@{/administradores}">Administradores</a>
+			</li>
+
+		</ul>
+		<div class="ml-auto"> <!-- Agregado para alinear a la derecha -->
+			<a class="btn text-white" style="background-color: rgb(30, 33, 78)" th:href="@{/login}"
+				sec:authorize="!isAuthenticated()">Iniciar Sesión</a>
+			<a sec:authorize="isAuthenticated()" class="btn btn-secondary" th:href="@{/logout}">Cerrar sesión</a>
+		</div>
+	</div>
+</nav>

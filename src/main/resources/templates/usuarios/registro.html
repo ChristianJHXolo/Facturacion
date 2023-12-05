@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">
+
+	<title>CashCraft | Creación de Clientes</title>
+	<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+	<link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+</head>
+
+<body>
+
+	<header th:insert="fragments/menu :: menu-principal">
+
+	</header>
+
+	<hr>
+	<div class="container">
+		<div th:if=${param.exito}>
+			<div class="alert alert-info">Se ha registrado exitosamente a
+				la aplicación</div>
+		</div>
+		<div class="card">
+			<h4 class="card-header"><strong>Cliente</strong></h4>
+			<div class="card-body">
+				<form th:action="@{/registro}" method="post" th:object="${usuario}">
+					<div class="form-group">
+						<label for="archivoImagen">Imagen</label>
+						<input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen">
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="nombre">Nombre : </label> <input id="nombre" type="text"
+							class="form-control" th:field="*{nombre}" required autofocus="autofocus">
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="apellido">Apellido : </label> <input id="apellido"
+							class="form-control" th:field="*{apellido}" required autofocus="autofocus">
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="email">Email : </label> <input id="email" type="email"
+							class="form-control" th:field="*{email}" required autofocus="autofocus">
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="password">Password : </label> <input type="password"
+							id="password" class="form-control" th:field="*{password}" required autofocus="autofocus">
+					</div>
+
+					<div class="form-group">
+						<button type="submit" class="btn text-white " style="background-color: rgb(30, 33, 78)">Guardar
+							cliente</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div> <!-- /container -->
+
+
+	<footer th:insert="fragments/footer :: pie-pagina" class="footer">
+		<div class="container text-center">
+			<p>
+				&copy; 2023 CashCraft |
+				<a href="#">Términos y condiciones</a>
+			</p>
+		</div>
+	</footer>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

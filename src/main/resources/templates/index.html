@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">
+
+	<title>Inicio - CashCraft</title>
+	<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link th:href="@{/bootstrap/css/jumbotron.css}" rel="stylesheet">
+	<link th:href="@{/bootstrap/css/sticky-footer-navbar.css}" rel="stylesheet">
+</head>
+
+<body>
+
+	<header th:insert="fragments/menu :: menu-principal">
+
+	</header>
+
+
+
+
+	<main role="main">
+
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron">
+			<div style="display: flex; justify-content: center; align-items: center;">
+				<img th:src="@{/images/CashCraft.png}" style="width: 200px; height: 200px;" class="" alt="...">
+			</div>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+
+
+						<hr>
+						<h3 class="font-weight-bold text-center text-capitalize" style="color: rgb(92,92,92);">Consulta
+							tus
+							facturas rápido y fácil.</h3>
+						<hr>
+					</div>
+					<div class="carousel-item">
+
+						<hr>
+						<h3 class="font-weight-bold text-center text-capitalize" style="color: rgb(92,92,92);">Consulta tus facturas desde casa.</h3>
+						<hr>
+					</div>
+
+				</div>
+
+				<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon color: black;" aria-hidden="true"></span>
+					<span class="sr-only"></span>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only"></span>
+				</a>
+
+				<br>
+				<br>
+
+				
+				</form>
+			</div>
+		</div>
+		<hr>
+
+		
+
+	</main>
+
+	<footer th:insert="/fragments/footer :: pie-pagina" class="footer">
+
+	</footer>
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+
+</html>
